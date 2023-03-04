@@ -1,0 +1,54 @@
+html,
+body {
+  background-color: #051726;
+  color: white;
+}
+#container,
+#container div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+#container {
+  gap: 64px;
+}
+#loggedin #container {
+  padding: 256px 0;
+}
+#loggedin {
+  display: none;
+}
+#loggedin #buttons {
+  display: flex;
+  gap: 8px;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+.btn-primary {
+  border-color: #4fcea8;
+  background-color: #81ffd9;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #4fcea8;
+  color: rgb(32, 32, 32);
+}
+
+.user-pic {
+  border-radius: 10px;
+}
+
+#acc_token {
+  width: 90%;
+  word-break: break-all;
+}
