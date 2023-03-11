@@ -6,7 +6,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const redirect_uri = process.env.REDIRECT_URI;
 
   const scope =
-    "user-read-private playlist-read-private user-library-read user-read-playback-position user-read-currently-playing user-read-playback-state user-modify-playback-state";
+    "user-read-private user-library-read user-read-playback-position user-read-currently-playing user-read-playback-state user-modify-playback-state user-follow-read";
 
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
