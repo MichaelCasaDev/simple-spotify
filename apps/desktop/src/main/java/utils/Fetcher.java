@@ -1,10 +1,10 @@
 package utils;
 
-import following.Following;
-import me.Me;
-import player.Player;
-import search.Search;
-import tracks.Tracks;
+import api.following.Following;
+import api.me.Me;
+import api.player.Player;
+import api.search.Search;
+import api.tracks.Tracks;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class Fetcher {
     private final String baseURI = "https://api.spotify.com/v1/";
-    private String authKey = "";
+    private String authKey;
 
     public Fetcher(String authKey) {
         this.authKey = authKey;
@@ -119,8 +119,9 @@ public class Fetcher {
         in.close();
 
         String content = sb.toString();
-        String xml = new ConvertJsonToXML().convertToXML(content, "root");
-
-        return xml;
+        if(content.startsWith("{"))
+            return new ConvertJsonToXML().convertToXML(content, "root");
+        else
+            return "<root></root>";
     }
 }
