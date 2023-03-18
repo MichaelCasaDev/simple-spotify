@@ -7,15 +7,10 @@ import javax.swing.border.EmptyBorder;
 import api.me.Me;
 import api.search.Item;
 import api.tracks.Tracks;
-import ui.components.Artisti_ascoltati;
-import ui.components.Brano;
-import ui.components.Contenitore_tutto;
-import ui.components.Home;
-import ui.components.Img_player;
-import ui.components.Logout_nome;
-import ui.components.Player;
-import ui.components.Ricerca;
+import ui.components.*;
 import utils.Fetcher;
+
+import java.awt.*;
 
 public class Gestore extends JFrame {
   public static final String dirBase = System.getProperty("user.dir") + "/src/main/resources/imgs/";
@@ -44,13 +39,14 @@ public class Gestore extends JFrame {
       contentPane = new JPanel();
       contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
       contentPane.setLayout(null);
+      contentPane.setBackground(new Color(5, 23, 38));
 
       setContentPane(contentPane);
 
-      contentPane.add(home);
-      contentPane.add(brano);
-      contentPane.add(player);
-      contentPane.add(img_player);
+      //contentPane.add(home);
+      //contentPane.add(brano);
+      //contentPane.add(player);
+      //contentPane.add(img_player);
       contentPane.add(logout_nome);
       contentPane.add(artisti_ascoltati);
       contentPane.add(ricerca);
