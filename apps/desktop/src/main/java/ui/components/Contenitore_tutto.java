@@ -48,6 +48,11 @@ public class Contenitore_tutto extends JPanel {
     this.setBackground(new Color(5, 23, 38));
     this.setLayout(null);
 
+    JLabel la = new JLabel("Ultimi 8 brani salvati");
+    la.setForeground(new Color(255,255,255));
+    la.setBounds(40, 500, 500, 20);
+    this.add(la);
+
     try {
       for (int i = 0; i < 8; i++) {
         this.add(brano(i == 0 ? 0 : (i * 60), 40, tracks.getItems().get(i).getTrack()));
