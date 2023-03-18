@@ -1,10 +1,15 @@
 import ui.Gestore;
 import utils.Fetcher;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Main {
     public static void main(String[] args) {
-        try {
-            Fetcher fetcher = new Fetcher("BQABCQbCqODuLOXFzjOXj-8E-W1lGH9Xeq7n95bgFRlm_Z8DUFuU_8Fj7CZCN2U21Qc4Flo8WtVbLBVauwLsFFweUNG1u5j1g0vb4Y2uB6QbxtKJLzwEH1RmFltLlhC8F_uQPhu9AzEOIgoFzYNR07qV3Lxg18LN-BTFHpI5tTFpJqTMcBmiTPfPJKniStCcFrkGwOryDykmqgzQyElr8DN-JnR-enEtjnseMq25EcqGztUvh51x7dk");
+        try (BufferedReader br = new BufferedReader(new FileReader( System.getProperty("user.dir") + "/src/main/resources/key.txt"))) {
+            String line = br.readLine();
+
+            Fetcher fetcher = new Fetcher(line);
             Gestore frame = new Gestore(fetcher);
             frame.setVisible(true);
         } catch (Exception e) {
