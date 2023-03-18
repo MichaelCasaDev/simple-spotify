@@ -70,8 +70,20 @@ public class Ricerca extends JPanel {
 
         try {
           Search search = fetcher.search(ricerca_qualcosa.getText(), comboBox.getSelectedItem().toString());
-          for(Item t : search.getTracks().getItems()) {
-            System.out.println(t.getName() + " - " + t.getAlbum().getArtists().getName());
+          if(comboBox.getSelectedItem().toString().equals("track")) {
+            for(Item t : search.getTracks().getItems()) {
+              System.out.println(t.getName() + " - " + t.getAlbum().getArtists().getName());
+            }
+          }
+          if(comboBox.getSelectedItem().toString().equals("artist")) {
+            for (Item t : search.getArtists().getItems()) {
+              System.out.println(t.getName());
+            }
+          }
+          if(comboBox.getSelectedItem().toString().equals("album")) {
+            for(Item t : search.getAlbums().getItems()) {
+              System.out.println(t.getName());
+            }
           }
           //contenitore_tutto.setTracks(search.getTracks());
           //contenitore_tutto.draw();
