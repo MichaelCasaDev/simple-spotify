@@ -82,16 +82,16 @@ public class Fetcher {
         return root;
     }
 
-    public void playStopPlayer(String device_id) throws Exception {
-        doRequest("me/player/play?device_id=" + device_id, "PUT");
+    public void playStopPlayer() throws Exception {
+        doRequest("me/player/play", "PUT");
     }
 
-    public void nextPlayer(String device_id) throws Exception {
-        doRequest("me/player/next?device_id=" + device_id, "POST");
+    public void nextPlayer() throws Exception {
+        doRequest("me/player/next", "POST");
     }
 
-    public void previousPlayer(String device_id) throws Exception {
-        doRequest("me/player/previous?device_id=" + device_id, "POST");
+    public void previousPlayer() throws Exception {
+        doRequest("me/player/previous", "POST");
     }
 
     private void doRequest(String path, String method) throws Exception {

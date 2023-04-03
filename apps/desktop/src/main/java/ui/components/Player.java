@@ -28,7 +28,7 @@ public class Player extends JPanel {
     this.setBackground(new Color(5, 23, 38));
     this.setBounds(0, 100, 150, 492);
     this.setLayout(null);
-
+    /*
     tempo_fine = new JLabel("Tempo");
     tempo_fine.setForeground(Color.WHITE);
     tempo_fine.setBounds(97, 41, 61, 16);
@@ -48,6 +48,7 @@ public class Player extends JPanel {
     progressBar.setBackground(Color.WHITE);
     progressBar.setBounds(115, 71, 4, 350);
     this.add(progressBar);
+    */
 
     ImageIcon originalSkipAvanti = new ImageIcon(dirBase + "skip_sopra.png");
     Image newSkip = originalSkipAvanti.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
@@ -71,12 +72,11 @@ public class Player extends JPanel {
     this.add(skip_Indietro);
 
     try {
-      api.player.Player p = fetcher.player();
       skip_avanti.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
           try {
-            fetcher.nextPlayer(p.getDevice().getId());
+            fetcher.nextPlayer();
           } catch (Exception exception) {
             exception.printStackTrace();
           }
@@ -87,7 +87,7 @@ public class Player extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
           try {
-            fetcher.playStopPlayer(p.getDevice().getId());
+            fetcher.playStopPlayer();
           } catch (Exception exception) {
             exception.printStackTrace();
           }
@@ -98,7 +98,7 @@ public class Player extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
           try {
-            fetcher.previousPlayer(p.getDevice().getId());
+            fetcher.previousPlayer();
           } catch (Exception exception) {
             exception.printStackTrace();
           }          super.mouseClicked(e);

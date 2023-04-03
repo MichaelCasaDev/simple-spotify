@@ -45,12 +45,14 @@ public class Gestore extends JFrame {
 
       //contentPane.add(home);
       //contentPane.add(brano);
-      //contentPane.add(player);
-      //contentPane.add(img_player);
+      contentPane.add(player);
+      contentPane.add(img_player);
       contentPane.add(logout_nome);
       contentPane.add(artisti_ascoltati);
       contentPane.add(ricerca);
       contentPane.add(contenitore_tutto);
+
+      this.setTitle("Simple Spotify");
     } catch (Exception e) {
       e.printStackTrace();
     }
