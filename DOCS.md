@@ -1,8 +1,8 @@
 # Documentazione Simple Spotify
 
 ### Struttura progetto
-- **[Desktop](desktop)**
-- **[Server](server)**
+- **[Desktop](apps/desktop)**
+- **[Server](apps/server)**
 
 ### Links
 
